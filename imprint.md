@@ -4,11 +4,11 @@ layout: page
 
 # Imprint
 
-Robert Schweizer  
-Gottschalkstr. 15  
-81825 München
+Robert Da Silva  
+Maximilianstr. 55  
+86150 Augsburg
 
-[+49 (0) 89 35827481](tel:+498935827481)  
+[+49 (0) 821 72984218](tel:+4982172984218)  
 [{{site.email}}](mailto:{{site.email}})
 
 # Disclaimer
