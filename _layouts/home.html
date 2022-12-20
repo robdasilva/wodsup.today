@@ -4,23 +4,32 @@ layout: default
 
 <section class="workouts">
   <div class="container">
-    {%- assign days = "tomorrow, today, yesterday" | split: ", " -%} 
-    {%- assign today = site.posts | where_exp: "post","post.date <= site.time" | first -%}
-    {%- for day in days -%}
-      {%- if day == "tomorrow" -%} 
-        {%- assign wod = today.next -%}
-      {%- elsif day == "today" -%} 
-        {%- assign wod = today -%}
-      {%- else -%} 
-        {%- assign wod = today.previous -%}
-      {%- endif -%}
+    <div id="today" class="column active">
+      <header>today</header>
+      <article>
+        <div>WOD's UP was a project providing daily programming workout programming.</div>
+        <div>Due to lack of time, the project must unfortunately be suspended indefinitely.</div>
+      </article>
+    </div>
+    {% comment %}
+      {%- assign days = "tomorrow, today, yesterday" | split: ", " -%} 
+      {%- assign today = site.posts | where_exp: "post","post.date <= site.time" | first -%}
+      {%- for day in days -%}
+        {%- if day == "tomorrow" -%} 
+          {%- assign wod = today.next -%}
+        {%- elsif day == "today" -%} 
+          {%- assign wod = today -%}
+        {%- else -%} 
+          {%- assign wod = today.previous -%}
+        {%- endif -%}
 
-      <div id="{{ day }}" class="column {% if day == 'today' %} active{% endif %}">
-        <header>{{ day }}</header>
-        <article class="workout" itemscope itemtype="http://schema.org/BlogPosting">
-          <div itemprop="articleBody">{{ wod.content }}</div>
-        </article>
-      </div>
-    {%- endfor -%}
+        <div id="{{ day }}" class="column {% if day == 'today' %} active{% endif %}">
+          <header>{{ day }}</header>
+          <article class="workout" itemscope itemtype="http://schema.org/BlogPosting">
+            <div itemprop="articleBody">{{ wod.content }}</div>
+          </article>
+        </div>
+      {%- endfor -%}
+    {% endcomment %}
   </div>
 </section>
